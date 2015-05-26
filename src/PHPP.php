@@ -103,7 +103,6 @@ namespace PHPP
         $buffer = $this->consume(strlen($keyword));
         $this->oneOrMoreWS();
         $this->keyword();
-        $this->expectNewLine();
       }
     }
 
@@ -121,23 +120,9 @@ namespace PHPP
       LexerBase::$dictionary[$keyword] = $translate;
     }
 
-    private function expectNewLine() {
-      if ($this->char !== "\n"
-       && $this->char !== "\r"
-       && $this->char !== "\r\n") {
-        throw new \Exception("Expecting new line.");
-      }
-      do {
-        $this->consume();
-      }
-      while ($this->char !== "\n"
-         && $this->char !== "\r"
-         && $this->char !== "\r\n");
-    }
-
     private function nextIdentifier() {
       $identifier = "";
-      if (ctype_alpha($this->char)) {
+      if (ctype_alpha($this->char) || $this->char === "_") {
         $identifier .= $this->char;
         $this->consume();
         while (ctype_alnum($this->char) || $this->char === "_") {
@@ -152,7 +137,7 @@ namespace PHPP
     private function searchKeywordTable()
     {
       $identifier = "";
-      if (ctype_alpha($this->char)) {
+      if (ctype_alpha($this->char) || $this->char === "_") {
         $identifier .= $this->char;
         $this->consume();
         while (ctype_alnum($this->char) || $this->char === "_") {

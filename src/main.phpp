@@ -1,5 +1,16 @@
-<?php
 
-#keyword yes true
+#keyword shape class
+#keyword shared public
+#keyword fn function
+#keyword entry __construct
+#keyword say echo
+#keyword foo php
 
-$amIReal = yes;
+<?foo
+
+shape Main {
+  shared fn entry()
+  {
+    say "Don't use it.";
+  }
+}
