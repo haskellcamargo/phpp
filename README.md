@@ -34,7 +34,7 @@ Translates to:
 
 class Main {
   public function __construct() {
-    echo "What a perfect day to die";
+    echo "Don't use it.";
   }
 }
 ```
