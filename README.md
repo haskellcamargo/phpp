@@ -10,19 +10,19 @@ Because I had free time.
 
 ```c
 
-#keyword demon class
-#keyword satanic public
-#keyword devil function
-#keyword kills __construct
-#keyword cry echo
-#keyword hell php
+#keyword shape class
+#keyword shared public
+#keyword fn function
+#keyword entry __construct
+#keyword say echo
+#keyword foo php
 
-<?hell
+<?foo
 
-demon Main {
-  satanic devil kills()
+shape Main {
+  shared fn entry()
   {
-    cry "What a perfect day to die";
+    say "Don't use it.";
   }
 }
 ```
